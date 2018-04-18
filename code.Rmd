@@ -1,12 +1,6 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
-
-
-## Loading and preprocessing the data
+Reproducible Research Course project
+====================================
+### Loading and preprocessing the data
 
 ```{r loadata, chache = T}
 setwd("C:/Users/Administrator/Desktop/git/RepData_PeerAssessment1")
@@ -16,7 +10,7 @@ act$date <- as.Date(act$date,fformat = "%Y/%m/%d")
 head(act, n = 6)
 ```
 
-## Calculate the mean total number of steps taken per day
+### Calculate the mean total number of steps taken per day
 
 1.Calculate the total number of steps taken per day
 ```{r steps1, chache = T}
@@ -38,7 +32,7 @@ mean(df$tsteps)
 median(df$tsteps)
 ```
 
-## Get the average daily activity pattern
+### Get the average daily activity pattern
 
 1.Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 ```{r patternplots, chache = T}
@@ -51,7 +45,7 @@ plot(df2$interval, df2$astep, type = "l", xlab = "Interval", ylab = "Tthe averag
 (filter(df2, astep == max(df2$astep)))$interval
 ```
 
-## Imputing missing values
+### Imputing missing values
 
 1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 ```{r, cache = T}
@@ -87,7 +81,7 @@ mean(df3$tsteps)
 ```
 we can know that toal number of steps each day increases.
 
-## Find differences in activity patterns between weekdays and weekends?
+### Find differences in activity patterns between weekdays and weekends?
 1.Create a new factor variable in the dataset with two levels ¨C ¡°weekday¡± and ¡°weekend¡± indicating whether a given date is a weekday or weekend day.
 ```{r}
 Sys.setlocale(category = "LC_ALL", locale = "english")

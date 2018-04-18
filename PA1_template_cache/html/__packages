@@ -1,0 +1,5 @@
+base
+plyr
+dplyr
+magrittr
+bindrcpp
